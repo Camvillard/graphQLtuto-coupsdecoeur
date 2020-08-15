@@ -4,6 +4,7 @@ import { RegularText } from "../Text/Text.style";
 import { CoupDeCoeurWrapper, Separator } from "./CoupDeCoeur.style";
 import { IconStar } from "../Icons/IconStar.component";
 import { Flexbox } from "../Wrappers/FlexboxWrapper.style";
+import { IconSave } from "../Icons/IconSave.component";
 type CoupDeCoeurProps = {
   data: any;
   index: number;
@@ -19,10 +20,13 @@ export const CoupDeCoeur = (props: CoupDeCoeurProps) => {
       </RegularText>
       <RegularText accent>{content}</RegularText>
       <Separator />
-      <Flexbox justify={"flex-start"} align={"center"}>
-        {new Array(rating).fill(0, 0, rating).map((_a, index) => (
-          <IconStar key={index} size={"S"} />
-        ))}
+      <Flexbox justify={"space-between"} align={"center"}>
+        <Flexbox justify={"flex-start"} align={"center"}>
+          {new Array(rating).fill(0, 0, rating).map((_a, index) => (
+            <IconStar key={index} size={"S"} />
+          ))}
+        </Flexbox>
+        <IconSave size={"S"} />
       </Flexbox>
     </CoupDeCoeurWrapper>
   );

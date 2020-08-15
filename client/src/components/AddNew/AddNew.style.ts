@@ -89,6 +89,7 @@ export const Button = styled.button`
   color: ${darkBlue};
   padding: 4px 0;
   font-weight: 500;
+  font-size: 18px;
   margin-top: 24px;
   &:focus {
     color: ${offWhite};

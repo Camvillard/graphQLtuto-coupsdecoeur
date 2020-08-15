@@ -38,7 +38,7 @@ export const Icon = styled.div<IconProps>`
   ${(props) =>
     props.size === "L" &&
     css`
-      width: 64px;
-      height: 64px;
+      width: 48px;
+      height: 48px;
     `}
 `;

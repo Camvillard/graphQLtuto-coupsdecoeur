@@ -10,6 +10,7 @@ import { AddNew } from "../components/AddNew/AddNew.component";
 import { SuccessScreen } from "../components/Success/SuccessScreen.component";
 import { IconPlus } from "../components/Icons/IconPlus.component";
 import { themeColors } from "../shared/theme";
+import { AddNewButton } from "../components/AddNew/AddNewButton.component";
 
 const { darkBlue } = themeColors;
 
@@ -41,7 +42,9 @@ export const CoupsDeCoeur = () => {
       {showSection === "all" && (
         <MainWrapper>
           <NarrowWrapper>
-            <MainTitle as={"h1"}>your coups de coeur</MainTitle>
+            <MainTitle as={"h1"} margins={"0 0 40px 0"}>
+              your coups de coeur
+            </MainTitle>
             {loading && <p>loading</p>}
             {error && <p>error</p>}
             {data &&
@@ -49,11 +52,7 @@ export const CoupsDeCoeur = () => {
                 <CoupDeCoeur key={index} data={cdc} index={index} />
               ))}
           </NarrowWrapper>
-          <IconPlus
-            background={darkBlue}
-            onIconClick={() => setSection("form")}
-            size={"M"}
-          />
+          <AddNewButton setSection={setSection} />
         </MainWrapper>
       )}
     </>

@@ -6,6 +6,7 @@ const { header } = themeFonts;
 
 type TitleProps = {
   lined?: boolean;
+  margins?: string;
 };
 
 export const MainTitle = styled.div<TitleProps>`
@@ -13,6 +14,7 @@ export const MainTitle = styled.div<TitleProps>`
   font-family: ${header};
   font-weight: 700;
   font-size: 5.6rem;
+  ${(props) => props.margins && "margin:" + props.margins};
   ${(props) =>
     props.lined &&
     css`

@@ -11,6 +11,7 @@ export const MainWrapper = styled.div`
 `;
 
 export const NarrowWrapper = styled.div`
+  padding: 24px 0;
   width: 82%;
   margin: auto;
   @media (min-width: ${sm}) {

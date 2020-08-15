@@ -29,11 +29,13 @@ export const SuccessScreen = (props: SuccessScreenProps) => {
               background={darkBlue}
               size={"M"}
               onIconClick={() => setShowSection("all")}
+              margins={"0 4px 0 0"}
             />
             <IconPlus
               background={darkBlue}
               size={"M"}
               onIconClick={() => setShowSection("form")}
+              margins={"0 0 0 4px"}
             />
           </Flexbox>
         </Flexbox>

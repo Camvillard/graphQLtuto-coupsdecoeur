@@ -2,9 +2,14 @@ import React from "react";
 import { IconProps, Icon } from "./Icon.component";
 
 export const IconPlus = (props: IconProps) => {
-  const { background, size, onIconClick } = props;
+  const { background, size, margins, onIconClick } = props;
   return (
-    <Icon background={background} size={size} onClick={onIconClick}>
+    <Icon
+      background={background}
+      size={size}
+      onClick={onIconClick}
+      margins={margins}
+    >
       <svg
         width="16"
         height="16"

@@ -4,7 +4,7 @@ import { themeColors } from "../../shared/theme";
 const { offWhite } = themeColors;
 
 export const CoupDeCoeurWrapper = styled.div`
-  margin: 24px 0;
+  margin: 24px 0 48px;
 `;
 
 export const Separator = styled.hr`
