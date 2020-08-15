@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server");
 
-export const typeDefs = gql`
+const typeDefs = gql`
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
 
   type CoupDeCoeur {
@@ -24,3 +24,5 @@ export const typeDefs = gql`
     createCoupDeCoeur(content: String!, rating: Int): ActionResponse
   }
 `;
+
+module.exports = typeDefs;

@@ -1,16 +1,11 @@
-export const resolvers = {
+const resolvers = {
   Query: {
-    coupsDeCoeur: async (_parent: any, args: any, context: any, info: any) => {
+    coupsDeCoeur: async (_parent, args, context, info) => {
       return context.dataSources.coupDeCoeursAPI.getAll();
     },
   },
   Mutation: {
-    createCoupDeCoeur: async (
-      _parent: any,
-      args: any,
-      context: any,
-      _info: any
-    ) => {
+    createCoupDeCoeur: async (_parent, args, context, _info) => {
       const result = await context.dataSources.coupDeCoeursAPI.createCoupDeCoeur(
         args
       );
@@ -22,3 +17,5 @@ export const resolvers = {
     },
   },
 };
+
+module.exports = resolvers;

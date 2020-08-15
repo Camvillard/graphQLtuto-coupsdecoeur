@@ -1,8 +1,8 @@
 const { ApolloServer } = require("apollo-server");
-const { CoupDeCoeursAPI } = require("./datasources/coupsdecoeur");
+const CoupDeCoeursAPI = require("./datasources/coupsdecoeur");
 
-import { resolvers } from "./resolvers";
-import { typeDefs } from "./schema";
+const resolvers = require("./resolvers");
+const typeDefs = require("./schema");
 
 const server = new ApolloServer({
   typeDefs,
@@ -13,6 +13,6 @@ const server = new ApolloServer({
 });
 
 // The `listen` method launches a web server.
-server.listen().then(({ url }: { url: string }) => {
+server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
