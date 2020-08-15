@@ -16,9 +16,7 @@
     "apollo-server": "^2.16.1",
     "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
-    "nodemon": "^2.0.4",
-    "sequelize": "^6.3.4",
-    "sqlite3": "^5.0.0"
+    "nodemon": "^2.0.4"
   },
   "devDependencies": {
     "apollo-link": "^1.2.14",

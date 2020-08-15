@@ -1,8 +1,6 @@
 const { gql } = require("apollo-server");
 
 const typeDefs = gql`
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
-
   type CoupDeCoeur {
     id: ID!
     content: String!
@@ -15,9 +13,9 @@ const typeDefs = gql`
     success: Boolean!
   }
 
-  # lists all the query types available
   type Query {
     coupsDeCoeur: [CoupDeCoeur]
+    coupDeCoeur(id: ID): CoupDeCoeur
   }
 
   type Mutation {

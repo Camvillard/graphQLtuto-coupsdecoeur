@@ -1,4 +1,5 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
+require("dotenv").config();
 
 class CoupDeCoeursAPI extends RESTDataSource {
   constructor() {
@@ -6,12 +7,17 @@ class CoupDeCoeursAPI extends RESTDataSource {
     this.baseURL = "https://api.airtable.com/v0/appIGKwcj6gU4Aslg";
   }
   willSendRequest(request) {
-    request.headers.set("Authorization", "Bearer keyAOCtPMQ3gzQcWT");
+    request.headers.set("Authorization", `Bearer ${process.env.AIRTABLE_API}`);
   }
 
   async getAll() {
     const { records } = await this.get("/coupsdecoeur");
     return records.map((record) => this.coupDeCoeurReducer(record));
+  }
+
+  async getById(id) {
+    const record = await this.get(`/coupsdecoeur/${id}`);
+    return this.coupDeCoeurReducer(record);
   }
 
   coupDeCoeurReducer(coupDeCoeur) {

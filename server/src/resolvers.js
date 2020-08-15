@@ -1,7 +1,10 @@
 const resolvers = {
   Query: {
-    coupsDeCoeur: async (_parent, args, context, info) => {
+    coupsDeCoeur: async (_parent, _args, context, _info) => {
       return context.dataSources.coupDeCoeursAPI.getAll();
+    },
+    coupDeCoeur: async (_parent, args, context, _info) => {
+      return context.dataSources.coupDeCoeursAPI.getById(args.id);
     },
   },
   Mutation: {
@@ -19,3 +22,8 @@ const resolvers = {
 };
 
 module.exports = resolvers;
+
+// parent : field's parent - resolver for a parent field is always executed before the resolvers for that field's children
+// args : object contains all graphQL arguments provided
+// context object shared accross all the resolvers
+// info : info about execution state of the operation

@@ -8,7 +8,6 @@ import {
 import { MainTitle } from "../components/Titles/Titles.style";
 import { AddNew } from "../components/AddNew/AddNew.component";
 import { SuccessScreen } from "../components/Success/SuccessScreen.component";
-import { IconPlus } from "../components/Icons/IconPlus.component";
 import { themeColors } from "../shared/theme";
 import { AddNewButton } from "../components/AddNew/AddNewButton.component";
 
