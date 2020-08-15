@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { themeFonts } from "../../shared/theme";
 
 const { accent, body } = themeFonts;

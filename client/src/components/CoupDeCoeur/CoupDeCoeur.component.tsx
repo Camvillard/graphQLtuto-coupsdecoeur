@@ -5,13 +5,34 @@ import { CoupDeCoeurWrapper, Separator } from "./CoupDeCoeur.style";
 import { IconStar } from "../Icons/IconStar.component";
 import { Flexbox } from "../Wrappers/FlexboxWrapper.style";
 import { IconSave } from "../Icons/IconSave.component";
+import { gql, useMutation } from "@apollo/client";
+
 type CoupDeCoeurProps = {
   data: any;
   index: number;
 };
+
+const ADD_TO_FAVORITE = gql`
+  mutation addToFavorites($id: ID!) {
+    addToFavorites(id: $id) {
+      success
+      coupDeCoeur {
+        content
+        id
+      }
+    }
+  }
+`;
+
 export const CoupDeCoeur = (props: CoupDeCoeurProps) => {
   const { data } = props;
-  const { content, rating, createdAt } = data;
+  const { content, rating, createdAt, isFavorite, id } = data;
+
+  const [addToFavorites] = useMutation(ADD_TO_FAVORITE, { variables: { id } });
+
+  const saveCoupDeCoeur = async () => {
+    return addToFavorites();
+  };
 
   return (
     <CoupDeCoeurWrapper>
@@ -26,7 +47,11 @@ export const CoupDeCoeur = (props: CoupDeCoeurProps) => {
             <IconStar key={index} size={"S"} />
           ))}
         </Flexbox>
-        <IconSave size={"S"} />
+        <IconSave
+          size={"S"}
+          isFavorite={isFavorite}
+          onIconClick={saveCoupDeCoeur}
+        />
       </Flexbox>
     </CoupDeCoeurWrapper>
   );

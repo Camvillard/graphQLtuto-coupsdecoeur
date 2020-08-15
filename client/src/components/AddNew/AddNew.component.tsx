@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client";
-import { MainWrapper, NarrowWrapper } from "../Wrappers/MainWrapper.style";
+import { NarrowWrapper } from "../Wrappers/MainWrapper.style";
 import { MainTitle } from "../Titles/Titles.style";
 import {
   AddNewForm,
-  Input,
   Button,
   Textarea,
   FormGroup,
   StarsWrapper,
 } from "./AddNew.style";
-import { SuccessScreen } from "../Success/SuccessScreen.component";
-import { Flexbox, FlexboxWrapper } from "../Wrappers/FlexboxWrapper.style";
+import { FlexboxWrapper } from "../Wrappers/FlexboxWrapper.style";
 import { IconStar } from "../Icons/IconStar.component";
 import { themeColors } from "../../shared/theme";
 import { FormError } from "../Errors/FormError.component";
 
 const RATINGS = [1, 2, 3, 4, 5];
-const { offWhite, darkBlue } = themeColors;
+const { darkBlue } = themeColors;
 
 const ADD_NEW = gql`
   mutation addCoupdCoeur($content: String!, $rating: Int) {

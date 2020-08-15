@@ -6,6 +6,9 @@ const resolvers = {
     coupDeCoeur: async (_parent, args, context, _info) => {
       return context.dataSources.coupDeCoeursAPI.getById(args.id);
     },
+    allFavorites: async (_parent, _args, context, _info) => {
+      return context.dataSources.coupDeCoeursAPI.getAllFavorites();
+    },
   },
   Mutation: {
     createCoupDeCoeur: async (_parent, args, context, _info) => {
@@ -18,6 +21,16 @@ const resolvers = {
         return { success: false };
       }
     },
+    // addToFavorites: async (_parent, args, context, _info) => {
+    //   const result = await context.dataSources.coupDeCoeursAPI.addToFavorites(
+    //     args.id
+    //   );
+    //   if (result) {
+    //     return { coupDeCoeur: result, success: true };
+    //   } else {
+    //     return { success: false };
+    //   }
+    // },
   },
 };
 

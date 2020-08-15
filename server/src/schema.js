@@ -6,6 +6,7 @@ const typeDefs = gql`
     content: String!
     rating: Int
     createdAt: String!
+    isFavorite: Boolean
   }
 
   type ActionResponse {
@@ -16,10 +17,12 @@ const typeDefs = gql`
   type Query {
     coupsDeCoeur: [CoupDeCoeur]
     coupDeCoeur(id: ID): CoupDeCoeur
+    allFavorites: [CoupDeCoeur]
   }
 
   type Mutation {
     createCoupDeCoeur(content: String!, rating: Int): ActionResponse
+    addToFavorites(id: ID!): ActionResponse
   }
 `;
 

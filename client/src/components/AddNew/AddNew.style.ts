@@ -3,7 +3,7 @@ import { themeFonts, themeColors } from "../../shared/theme";
 import { Flexbox } from "../Wrappers/FlexboxWrapper.style";
 
 const { accent } = themeFonts;
-const { darkBlue, yellow, offWhite } = themeColors;
+const { darkBlue, offWhite } = themeColors;
 
 export const AddNewForm = styled.div`
   margin-top: 24px;
