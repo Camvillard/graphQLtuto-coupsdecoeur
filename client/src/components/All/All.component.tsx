@@ -7,7 +7,7 @@ import { AddNewButton } from "../AddNew/AddNewButton.component";
 import { Filter } from "../Filter/Filter.component";
 
 const GET_ALL = gql`
-  query {
+  query allCoupsDeCoeur {
     coupsDeCoeur {
       content
       rating

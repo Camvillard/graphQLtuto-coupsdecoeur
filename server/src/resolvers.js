@@ -21,16 +21,16 @@ const resolvers = {
         return { success: false };
       }
     },
-    // addToFavorites: async (_parent, args, context, _info) => {
-    //   const result = await context.dataSources.coupDeCoeursAPI.addToFavorites(
-    //     args.id
-    //   );
-    //   if (result) {
-    //     return { coupDeCoeur: result, success: true };
-    //   } else {
-    //     return { success: false };
-    //   }
-    // },
+    addToFavorites: async (_parent, args, context, _info) => {
+      const result = await context.dataSources.coupDeCoeursAPI.addToFavorites(
+        args.id
+      );
+      if (result) {
+        return { coupDeCoeur: result, success: true };
+      } else {
+        return { success: false };
+      }
+    },
   },
 };
 
